@@ -1,2 +1,2 @@
-# mirabi-vue
-Integration of Mirabi GQL for Vue3
+# mirabi-graphql
+GraphQL endpoint integration for Mirabi CMS.

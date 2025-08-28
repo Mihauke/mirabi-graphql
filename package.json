@@ -1,0 +1,32 @@
+{
+  "name": "mirabi-graphql",
+  "version": "1.0.0",
+  "description": "GraphQL endpoint integration for Mirabi CMS.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "vitest",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mihauke/mirabi-graphql.git"
+  },
+  "keywords": [
+    "mirabi", "graphql", "cms"
+  ],
+  "author": "Michal Grzybowski",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Mihauke/mirabi-graphql/issues"
+  },
+  "homepage": "https://github.com/Mihauke/mirabi-graphql#readme",
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "@apollo/client": "^4.0.2"
+  }
+}
