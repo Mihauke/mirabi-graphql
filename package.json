@@ -13,7 +13,9 @@
     "url": "git+https://github.com/Mihauke/mirabi-graphql.git"
   },
   "keywords": [
-    "mirabi", "graphql", "cms"
+    "mirabi",
+    "graphql",
+    "cms"
   ],
   "author": "Michal Grzybowski",
   "license": "Apache-2.0",
@@ -28,5 +30,10 @@
   },
   "dependencies": {
     "@apollo/client": "^4.0.2"
-  }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ]
 }
