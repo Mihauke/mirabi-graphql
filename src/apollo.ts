@@ -5,8 +5,8 @@ function createApolloClient() {
     uri: "https://mirabi.app/graphql",
     preserveHeaderCase: true,
     headers: {
-      Authorization: global.VITE_MIRABI_AUTH ?? "",
-      "MIRABI-API-SITE": global.VITE_MIRABI_SITE ?? "",
+      Authorization: globalThis.VITE_MIRABI_AUTH ?? "",
+      "MIRABI-API-SITE": globalThis.VITE_MIRABI_SITE ?? "",
     },
   });
 
@@ -15,22 +15,6 @@ function createApolloClient() {
     link: httpLink,
   });
 }
-
-// const authMiddleware = new ApolloLink((operation, forward) => {
-//   // add the authorization to the headers
-//   operation.setContext(({ headers = {} }) => ({
-//     headers: {
-//       ...headers,
-//       authorization: import.meta.env.VITE_MIRABI_AUTH,
-//       'MIRABI-API-SITE': import.meta.env.VITE_MIRABI_SITE,
-//     },
-//     fetchOptions: {
-//       mode: 'no-cors',
-//     },
-//   }))
-
-//   return forward(operation)
-// })
 
 const apolloClient = createApolloClient();
 
