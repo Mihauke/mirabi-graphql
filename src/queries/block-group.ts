@@ -1,5 +1,5 @@
 import gql from "graphql-tag";
-import { BLOCK_FIELDS_FRAGMENT } from "./block";
+import { BLOCK_FRAGMENT } from "./block";
 
 const BLOCK_GROUP_QUERY = gql`
   query BlockGroup($key: String) {
@@ -8,11 +8,11 @@ const BLOCK_GROUP_QUERY = gql`
       key
       name
       blocks {
-        ...BlockFields
+        ...Block
       }
     }
   }
-  ${BLOCK_FIELDS_FRAGMENT}
+  ${BLOCK_FRAGMENT}
 `;
 
 export { BLOCK_GROUP_QUERY };

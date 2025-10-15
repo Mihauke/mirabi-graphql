@@ -1,22 +1,28 @@
 import gql from "graphql-tag";
 
-const BLOCK_FIELDS_FRAGMENT = gql`
-  fragment BlockFields on Block {
+const BLOCK_FRAGMENT = gql`
+  fragment Block on Block {
     id
     key
     content
     created_at
     updated_at
+    fields {
+      id
+      key
+      type
+      value
+    }
   }
 `;
 
 const BLOCK_QUERY = gql`
   query Block($key: String) {
     block(key: $key) {
-      ...BlockFields
+      ...Block
     }
   }
-  ${BLOCK_FIELDS_FRAGMENT}
+  ${BLOCK_FRAGMENT}
 `;
 
-export { BLOCK_QUERY, BLOCK_FIELDS_FRAGMENT };
+export { BLOCK_QUERY, BLOCK_FRAGMENT };
