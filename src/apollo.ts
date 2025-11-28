@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client/core";
+import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client/core";
 
 function createApolloClient() {
   const httpLink = new HttpLink({

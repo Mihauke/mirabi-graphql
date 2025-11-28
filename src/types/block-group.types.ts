@@ -1,4 +1,4 @@
-import { Block } from "./block.types";
+import type { Block } from "./block.types";
 
 export type BlockGroup = {
   id: number;

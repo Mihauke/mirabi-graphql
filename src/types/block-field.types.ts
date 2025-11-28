@@ -1,6 +1,6 @@
 export type BlockField = {
   id: number;
   key: string;
-  type: string;
+  type: "image" | "text" | "editor";
   value: string;
 };

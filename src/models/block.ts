@@ -1,18 +1,23 @@
-import { Block } from "../types/block.types";
 import { apolloClient } from "../apollo";
 import { BLOCK_QUERY } from "../queries/block";
+import type { Block } from "../types/block.types";
 
 export function getBlock(key: string): Promise<Block | null> {
-  return new Promise<Block | null>(async (resolve, reject) => {
-    try {
-      const result = (await apolloClient.query({
+  return new Promise<Block | null>((resolve, reject) => {
+    apolloClient
+      .query<{ block: Block | null }>({
         query: BLOCK_QUERY,
         variables: { key },
-      })) as any;
-
-      resolve(result.data.block as Block);
-    } catch (error) {
-      reject(error);
-    }
+      })
+      .then((result) => {
+        if (!result.data || result.data.block === undefined) {
+          resolve(null);
+          return;
+        }
+        resolve(result.data.block);
+      })
+      .catch((error) => {
+        reject(error);
+      });
   });
 }
